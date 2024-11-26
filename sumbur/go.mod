@@ -2,7 +2,10 @@ module sumbur
 
 go 1.23.3
 
-require github.com/savsgio/atreugo/v11 v11.13.2
+require (
+	github.com/savsgio/atreugo/v11 v11.13.2
+	gopkg.in/yaml.v3 v3.0.1
+)
 
 require (
 	github.com/andybalholm/brotli v1.1.1 // indirect
