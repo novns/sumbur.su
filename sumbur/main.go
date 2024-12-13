@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"sumbur/views"
 
 	"github.com/savsgio/atreugo/v11"
 	"gopkg.in/yaml.v3"
@@ -14,7 +15,11 @@ type Config struct {
 func main() {
 	// Configuration
 
-	config := Config{}
+	config := Config{
+		Server: atreugo.Config{
+			NoDefaultContentType: true,
+		},
+	}
 
 	file, err := os.ReadFile(os.Getenv("SUMBUR_CONFIG"))
 	if err != nil {
@@ -31,7 +36,8 @@ func main() {
 	server := atreugo.New(config.Server)
 
 	server.GET("/", func(ctx *atreugo.RequestCtx) error {
-		return ctx.HTTPResponse("sumbur.su")
+		views.WritePage(ctx)
+		return nil
 	})
 
 	err = server.ListenAndServe()
