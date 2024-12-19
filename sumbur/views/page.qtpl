@@ -1,4 +1,20 @@
-{% func Page() -%}
+{% interface HTML {
+    Title()
+    Body()
+} %}
+
+
+{% code
+type BasePage struct{}
+%}
+
+
+{% func (page *BasePage) Title() %}?{% endfunc %}
+
+{% func (page *BasePage) Body() %}?{% endfunc %}
+
+
+{% func Page(page HTML) -%}
 <!DOCTYPE html>
 
 <html lang="ru">
@@ -9,14 +25,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>sumbur.su</title>
+<title>{%= page.Title() %} — sumbur.su</title>
 
 </head>
 
 
 <body>
 
-sumbur.su
+<h1>{%= page.Title() %}</h1>
+
+{%= page.Body() %}
 
 </body>
 
