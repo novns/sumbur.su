@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	"sumbur/views"
+	"sumbur/views/http_errors"
 
 	"github.com/savsgio/atreugo/v11"
 	"gopkg.in/yaml.v3"
@@ -18,6 +19,9 @@ func main() {
 	config := Config{
 		Server: atreugo.Config{
 			NoDefaultContentType: true,
+
+			MethodNotAllowedView: http_errors.NotFoundView,
+			NotFoundView:         http_errors.NotFoundView,
 		},
 	}
 
