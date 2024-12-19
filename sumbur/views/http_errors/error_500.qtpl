@@ -1,0 +1,10 @@
+{% func (data *Panic) Title() %}Ошибка 500{% endfunc %}
+
+
+{% func (data *Panic) Body() -%}
+{%v data.err %}
+
+<pre>
+{%z data.stack %}
+</pre>
+{% endfunc %}

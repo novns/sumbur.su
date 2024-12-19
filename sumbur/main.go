@@ -22,6 +22,7 @@ func main() {
 
 			MethodNotAllowedView: http_errors.NotFoundView,
 			NotFoundView:         http_errors.NotFoundView,
+			PanicView:            http_errors.PanicView,
 		},
 	}
 
@@ -43,6 +44,14 @@ func main() {
 		views.WritePage(ctx, &views.BasePage{})
 		return nil
 	})
+
+	// Test routes
+
+	server.GET("/panic", func(ctx *atreugo.RequestCtx) error {
+		panic("Тестовая ошибка")
+	})
+
+	// Run
 
 	err = server.ListenAndServe()
 
