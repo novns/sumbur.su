@@ -14,40 +14,40 @@ var (
 	_ = qt422016.AcquireByteBuffer
 )
 
-func (data *NotFound) StreamTitle(qw422016 *qt422016.Writer) {
+func (err *NotFound) StreamTitle(qw422016 *qt422016.Writer) {
 	qw422016.N().S(`Ошибка 404`)
 }
 
-func (data *NotFound) WriteTitle(qq422016 qtio422016.Writer) {
+func (err *NotFound) WriteTitle(qq422016 qtio422016.Writer) {
 	qw422016 := qt422016.AcquireWriter(qq422016)
-	data.StreamTitle(qw422016)
+	err.StreamTitle(qw422016)
 	qt422016.ReleaseWriter(qw422016)
 }
 
-func (data *NotFound) Title() string {
+func (err *NotFound) Title() string {
 	qb422016 := qt422016.AcquireByteBuffer()
-	data.WriteTitle(qb422016)
+	err.WriteTitle(qb422016)
 	qs422016 := string(qb422016.B)
 	qt422016.ReleaseByteBuffer(qb422016)
 	return qs422016
 }
 
-func (data *NotFound) StreamBody(qw422016 *qt422016.Writer) {
+func (err *NotFound) StreamBody(qw422016 *qt422016.Writer) {
 	qw422016.N().S(`Страница "`)
-	qw422016.E().Z(data.path)
+	qw422016.E().Z(err.path)
 	qw422016.N().S(`" не найдена
 `)
 }
 
-func (data *NotFound) WriteBody(qq422016 qtio422016.Writer) {
+func (err *NotFound) WriteBody(qq422016 qtio422016.Writer) {
 	qw422016 := qt422016.AcquireWriter(qq422016)
-	data.StreamBody(qw422016)
+	err.StreamBody(qw422016)
 	qt422016.ReleaseWriter(qw422016)
 }
 
-func (data *NotFound) Body() string {
+func (err *NotFound) Body() string {
 	qb422016 := qt422016.AcquireByteBuffer()
-	data.WriteBody(qb422016)
+	err.WriteBody(qb422016)
 	qs422016 := string(qb422016.B)
 	qt422016.ReleaseByteBuffer(qb422016)
 	return qs422016

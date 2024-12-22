@@ -1,6 +1,6 @@
-{% func (data *NotFound) Title() %}Ошибка 404{% endfunc %}
+{% func (err *NotFound) Title() %}Ошибка 404{% endfunc %}
 
 
-{% func (data *NotFound) Body() -%}
-Страница "{%z data.path %}" не найдена
+{% func (err *NotFound) Body() -%}
+Страница "{%z err.path %}" не найдена
 {% endfunc %}
