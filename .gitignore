@@ -1,4 +1,6 @@
 /public/sumbur
 /public/sumbur-debug
 
+/public/static/*.gz
+
 /sumbur/vendor
