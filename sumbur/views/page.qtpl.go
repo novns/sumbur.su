@@ -4,6 +4,10 @@
 package views
 
 import (
+	"sumbur/views/static"
+)
+
+import (
 	qtio422016 "io"
 
 	qt422016 "github.com/valyala/quicktemplate"
@@ -71,6 +75,10 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="`)
+	qw422016.E().S(static.Stamp("sumbur.css"))
+	qw422016.N().S(`">
 
 <title>`)
 	page.StreamTitle(qw422016)

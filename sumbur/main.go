@@ -4,12 +4,15 @@ import (
 	"os"
 	"sumbur/views"
 	"sumbur/views/http_errors"
+	"sumbur/views/static"
 
 	"github.com/savsgio/atreugo/v11"
 	"gopkg.in/yaml.v3"
 )
 
 type Config struct {
+	Debug bool
+
 	Server atreugo.Config
 }
 
@@ -44,6 +47,13 @@ func main() {
 		views.WritePage(ctx, &views.BasePage{})
 		return nil
 	})
+
+	// Static files
+
+	static.Debug = config.Debug
+
+	server.Static("/static", "static")
+	server.Static("/static-stamp/{stamp}", "static")
 
 	// Test routes
 
