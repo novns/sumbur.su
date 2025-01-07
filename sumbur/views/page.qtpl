@@ -39,9 +39,29 @@ type BasePage struct{}
 
 <body>
 
+<div id="page">
+
+
+<header>
+ᚻᛇᚪᚠᚩᛞ
+</header>
+
+
+<main>
+
 <h1>{%= page.Title() %}</h1>
 
 {%= page.Body() %}
+
+</main>
+
+
+<footer>
+ᚠᚩᛏ
+</footer>
+
+
+</div>
 
 </body>
 

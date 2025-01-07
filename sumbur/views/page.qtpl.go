@@ -89,6 +89,16 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 
 <body>
 
+<div id="page">
+
+
+<header>
+ᚻᛇᚪᚠᚩᛞ
+</header>
+
+
+<main>
+
 <h1>`)
 	page.StreamTitle(qw422016)
 	qw422016.N().S(`</h1>
@@ -96,6 +106,16 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 `)
 	page.StreamBody(qw422016)
 	qw422016.N().S(`
+
+</main>
+
+
+<footer>
+ᚠᚩᛏ
+</footer>
+
+
+</div>
 
 </body>
 

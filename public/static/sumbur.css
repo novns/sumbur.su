@@ -1,0 +1,36 @@
+/* Layout */
+
+body {
+    margin: 0px;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1200px;
+    min-height: 100vh;
+
+    margin: 0px auto;
+}
+
+footer {
+    margin-top: auto;
+}
+
+
+/* Look */
+
+body {
+    background-color: whitesmoke;
+}
+
+#page {
+    background-color: white;
+}
+
+header,
+footer {
+    background-color: darkslateblue;
+    color: white;
+}
