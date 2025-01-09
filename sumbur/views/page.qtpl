@@ -43,7 +43,7 @@ type BasePage struct{}
 
 
 <header>
-ᚻᛇᚪᚠᚩᛞ
+Сумбур
 </header>
 
 
@@ -57,7 +57,15 @@ type BasePage struct{}
 
 
 <footer>
-ᚠᚩᛏ
+
+<div>
+© 2019–2025 Николай Новиков
+</div>
+
+<div>
+<a href="mailto:sumbur@sumbur.su">sumbur@sumbur.su</a>
+</div>
+
 </footer>
 
 

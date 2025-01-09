@@ -93,7 +93,7 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 
 
 <header>
-ᚻᛇᚪᚠᚩᛞ
+Сумбур
 </header>
 
 
@@ -111,7 +111,15 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 
 
 <footer>
-ᚠᚩᛏ
+
+<div>
+© 2019–2025 Николай Новиков
+</div>
+
+<div>
+<a href="mailto:sumbur@sumbur.su">sumbur@sumbur.su</a>
+</div>
+
 </footer>
 
 
