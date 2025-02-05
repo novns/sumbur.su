@@ -1,6 +1,6 @@
 module sumbur
 
-go 1.23.4
+go 1.23.6
 
 require (
 	github.com/savsgio/atreugo/v11 v11.13.2
@@ -16,5 +16,5 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.58.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.29.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
 )
