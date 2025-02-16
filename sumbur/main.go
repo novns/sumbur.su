@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"sumbur/data"
 	"sumbur/views"
 	"sumbur/views/http_errors"
 	"sumbur/views/static"
@@ -43,8 +44,12 @@ func main() {
 
 	server := atreugo.New(config.Server)
 
+	server.UseBefore(data.Init)
+
+	// Routes
+
 	server.GET("/", func(ctx *atreugo.RequestCtx) error {
-		views.WritePage(ctx, &views.BasePage{})
+		views.WritePage(ctx, data.Get(ctx), &views.BasePage{})
 		return nil
 	})
 

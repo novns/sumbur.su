@@ -1,4 +1,5 @@
 {% import (
+    "sumbur/data"
     "sumbur/views/static"
 ) %}
 
@@ -19,7 +20,7 @@ type BasePage struct{}
 {% func (page *BasePage) Body() %}?{% endfunc %}
 
 
-{% func Page(page HTML) -%}
+{% func Page(d *data.Data, page HTML) -%}
 <!DOCTYPE html>
 
 <html lang="ru">

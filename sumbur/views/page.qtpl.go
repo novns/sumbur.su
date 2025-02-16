@@ -4,6 +4,7 @@
 package views
 
 import (
+	"sumbur/data"
 	"sumbur/views/static"
 )
 
@@ -65,7 +66,7 @@ func (page *BasePage) Body() string {
 	return qs422016
 }
 
-func StreamPage(qw422016 *qt422016.Writer, page HTML) {
+func StreamPage(qw422016 *qt422016.Writer, d *data.Data, page HTML) {
 	qw422016.N().S(`<!DOCTYPE html>
 
 <html lang="ru">
@@ -132,15 +133,15 @@ func StreamPage(qw422016 *qt422016.Writer, page HTML) {
 `)
 }
 
-func WritePage(qq422016 qtio422016.Writer, page HTML) {
+func WritePage(qq422016 qtio422016.Writer, d *data.Data, page HTML) {
 	qw422016 := qt422016.AcquireWriter(qq422016)
-	StreamPage(qw422016, page)
+	StreamPage(qw422016, d, page)
 	qt422016.ReleaseWriter(qw422016)
 }
 
-func Page(page HTML) string {
+func Page(d *data.Data, page HTML) string {
 	qb422016 := qt422016.AcquireByteBuffer()
-	WritePage(qb422016, page)
+	WritePage(qb422016, d, page)
 	qs422016 := string(qb422016.B)
 	qt422016.ReleaseByteBuffer(qb422016)
 	return qs422016
